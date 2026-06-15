@@ -1,0 +1,19 @@
+{
+  "name": "history-gallery",
+  "version": "1.0.0",
+  "description": "Virtual art gallery viewer",
+  "type": "module",
+  "scripts": {
+    "start": "serve . -p 9990",
+    "generate:hdr": "node scripts/generate-hdr-config.mjs"
+  },
+  "author": "Rafael Becerra",
+  "license": "MIT",
+  "dependencies": {
+    "three": "^0.182.0",
+    "tweakpane": "^4.0.5"
+  },
+  "devDependencies": {
+    "serve": "^14.2.1"
+  }
+}

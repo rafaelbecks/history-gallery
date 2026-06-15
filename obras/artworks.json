@@ -1,0 +1,25 @@
+{
+  "artworks": [
+    {
+      "id": "homage-new-york",
+      "title": "Homage to New York",
+      "slot": { "group": "PaitingsInside", "index": 2 },
+      "image": "1_homage_newyork.jpg",
+      "fichaHtml": "homage-new-york.html"
+    },
+    {
+      "id": "dog-on-a-leash",
+      "title": "Dynamics of a Dog on a Leash",
+      "slot": { "group": "PaitingsInside", "index": 8 },
+      "image": "2_dog_leash.png",
+      "fichaHtml": "dog-on-a-leash.html"
+    },
+    {
+      "id": "homenaje-martin-weber",
+      "title": "Homenaje a la obra de Philip Henry Gosse",
+      "slot": { "group": "PaitingsInside", "index": 14 },
+      "image": "3_homenaje_martin_weber.png",
+      "fichaHtml": "homenaje-martin-weber.html"
+    }
+  ]
+}

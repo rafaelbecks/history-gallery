@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://esm.sh/three@0.182.0",
+    "three/addons/": "https://esm.sh/three@0.182.0/addons/",
+    "tweakpane": "https://esm.sh/tweakpane@4.0.5"
+  }
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="theme-color" content="#111111" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="default" />
+<link rel="manifest" href="/manifest.json" />
+<link rel="apple-touch-icon" href="/icons/icon192.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+<title>History Gallery</title>
+<link rel="stylesheet" href="./styles.css" />
+</head>
+<body class="scene-viewer">
+
+<script type="module" src="./src/main.js"></script>
+
+<button id="panel-toggle" class="hidden" type="button" aria-label="Open controls" aria-expanded="false" aria-controls="side-panel">
+  <img src="./icons/shapes-outline.svg" alt="" width="24" height="24" />
+</button>
+
+<aside id="side-panel" class="hidden">
+  <div id="side-panel-scroll"></div>
+</aside>
+
+<section id="loading" hidden aria-live="polite">
+  <div class="loading-card">
+    <p class="loading-label">Loading</p>
+    <div class="loading-track" role="progressbar" aria-valuemin="0" aria-valuemax="100">
+      <div class="loading-bar"></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
