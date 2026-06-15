@@ -19,7 +19,7 @@ export function createPaintingSystem({ camera, controls, domElement }) {
   let enabled = false;
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
-  const listeners = { slotChange: [], select: [], arrived: [] };
+  const listeners = { slotChange: [], arrived: [] };
 
   function emit(event, payload) {
     for (const fn of listeners[event] ?? []) fn(payload);
@@ -140,20 +140,27 @@ export function createPaintingSystem({ camera, controls, domElement }) {
     pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
 
     raycaster.setFromCamera(pointer, camera);
-    const hits = raycaster.intersectObjects(getMeshes(), false);
+    const hits = raycaster.intersectObjects(getArtworkMeshes(), false);
     if (!hits.length) return null;
 
     const mesh = hits[0].object;
-    const slot = slots.find((s) => s.mesh === mesh);
-    if (!slot?.artwork) return null;
+    const index = slots.findIndex((s) => s.mesh === mesh);
+    if (index === -1) return null;
 
-    emit("select", { slot, artwork: slot.artwork });
+    const slot = slots[index];
+    if (index === currentIndex && !isTransitioning()) {
+      emit("arrived", { index, slot });
+      return slot;
+    }
+
+    goToIndex(index);
     return slot;
   }
 
   function onPointerDown(e) {
     if (e.button !== 0) return;
-    pick(e.clientX, e.clientY);
+    const slot = pick(e.clientX, e.clientY);
+    if (slot) e.preventDefault();
   }
 
   async function init(model) {

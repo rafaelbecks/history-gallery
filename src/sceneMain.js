@@ -68,10 +68,6 @@ export async function bootGalleryViewer() {
     else ficha.hide();
   });
 
-  paintingSystem.on("select", ({ artwork }) => {
-    ficha.show(artwork);
-  });
-
   const clock = new THREE.Clock();
   const navigation = createNavigation({ camera, controls });
   const cameraDebug = createCameraDebug({ camera, controls });

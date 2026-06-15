@@ -20,6 +20,13 @@
       "slot": { "group": "PaitingsInside", "index": 14 },
       "image": "3_homenaje_martin_weber.png",
       "fichaHtml": "homenaje-martin-weber.html"
+    },
+    {
+      "id": "senster",
+      "title": "The Senster",
+      "slot": { "group": "PaitingsInside", "index": 20 },
+      "image": "4_senster.jpg",
+      "fichaHtml": "senster.html"
     }
   ]
 }
